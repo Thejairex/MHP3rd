@@ -1,22 +1,31 @@
-{% extends 'layout.html' %}
+{% extends 'layouts/layout.html' %}
 
 {% block body %}
 
-{% include 'navbar.html' %}
+{% include 'layouts/navbar.html' %}
 
 <main>
+    <a href="/item-shop/add" class="btn"> + </a>
     <table class="table table-hover table-striped-columns">
         <thead>
+            <th scope="col">#</th>
             <th scope="col">ID</th>
-            <th scope="col">Modulo</th>
-            <th scope="col">Activo/Par</th>
-            <th scope="col">Hora</th>
-            <th scope="col">Accion</th>
-            <th scope="col">Dia</th>
-            <th scope="col">Estado</th>
+            <th scope="col">Nombre</th>
+            <th scope="col">Descripción</th>
+            <th scope="col">Precio</th>
+            <th scope="col">Nivel de Tieda</th>
         </thead>
         <tbody>
-
+            {% for data in datas %}
+            <tr>
+                <td><img src=" {{url_for('static', filename=data[5])}} " width="32px" alt=""></td>
+                <td>{{data[0]}}</td>
+                <td>{{data[1]}}</td>
+                <td>{{data[2]}}</td>
+                <td>{{data[3]}}</td>
+                <td>{{data[4]}}</td>
+            </tr>
+            {% endfor %}
         </tbody>
     </table>
 </main>

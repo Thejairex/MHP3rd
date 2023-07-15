@@ -1,0 +1,43 @@
+{% extends 'layouts/layout.html' %}
+
+{% block body %}
+
+{% include 'layouts/navbar.html' %}
+
+<main class=" m-0 p-5 ">
+    <h2 class=" text-light">Añadir objeto</h2>
+    <form action="/api/add_item_shop" method="POST" enctype="multipart/form-data">
+        <div class="mb-3">
+            <label for="id_name" class="control">Nombre</label>
+            <input type="text" class="form-control rounded bg-dark text-light"
+                name="name" id="id_name">
+        </div>
+
+        <div class="mb-3">
+            <label for="id_description" class="control">Descripción</label>
+            <textarea class="form-control rounded bg-dark text-light"
+                name="description" id="id_description"></textarea>
+        </div>
+
+        <div class="mb-3">
+            <label for="id_price" class="control">Precio</label>
+            <input type="text" class="form-control rounded bg-dark text-light"
+                name="price" id="id_price">
+        </div>
+
+        <div class="mb-3">
+            <label for="id_shop_level" class="control">Nivel de Tienda</label>
+            <input type="text" class="form-control rounded bg-dark text-light"
+                name="shop_level" id="id_shop_level">
+        </div>
+
+        <div class="mb-3">
+            <label for="imageFile" class="form-label">Subir Imagen</label>
+            <input class="form-control rounded bg-dark text-light" type="file"
+                id="imageFile" name="image">
+        </div>
+        <input type="submit" value="Subir imagen" class="btn btn-dark">
+    </form>
+</main>
+
+{% endblock body %}
