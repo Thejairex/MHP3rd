@@ -5,6 +5,7 @@ import os
 
 from db import Db
 
+os.chdir(os.path.dirname(os.path.abspath(__file__)))
 app = Flask(__name__)
 db = Db()
 
