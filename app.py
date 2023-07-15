@@ -1,6 +1,7 @@
 from flask import *
 from werkzeug.utils import secure_filename
 from security import Security
+import os
 
 from db import Db
 
@@ -14,7 +15,7 @@ def upload(folder, archivo):
         if Security().verify_extension(filename):
             url = f"img/{folder}/{filename}"
             print(url)
-            archivo.save("static/" + url)
+            archivo.save(os.path.join("static/" + url))
             return url
         
         else:
